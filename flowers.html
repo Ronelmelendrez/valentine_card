@@ -1073,22 +1073,26 @@
       body {
         min-height: 100vh;
         padding: 0;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding-top: 2vmin;
       }
 
       .flowers {
-        position: absolute;
+        position: relative;
         left: 50%;
-        bottom: 0;
+        top: 0;
         transform: translateX(-50%);
         width: 100%;
         max-width: 100%;
         height: auto;
+        margin: 0 auto;
       }
 
       .flower {
         position: absolute;
-        bottom: 5vmin;
-        transform-origin: bottom center;
+        top: 5vmin;
+        transform-origin: top center;
         z-index: 10;
         --fl-speed: 0.8s;
       }
@@ -1148,69 +1152,80 @@
 
       /* Adjust grass elements for mobile */
       .flower__grass {
-        bottom: 8vmin;
+        top: 40vmin;
+        bottom: auto;
         left: -5vmin;
       }
 
       .flower__g-long {
-        bottom: 5vmin;
+        top: 35vmin;
+        bottom: auto;
         left: -2vmin;
         --w: 1.5vmin;
         --h: 4vmin;
       }
 
       .flower__g-right {
-        bottom: 4vmin;
+        top: 32vmin;
+        bottom: auto;
         left: -1.5vmin;
       }
 
       .flower__g-front {
-        bottom: 4vmin;
+        top: 32vmin;
+        bottom: auto;
         left: 1.5vmin;
       }
 
       .flower__g-fr {
-        bottom: -3vmin;
+        top: 38vmin;
+        bottom: auto;
         left: 0.5vmin;
       }
 
       .long-g {
-        bottom: 15vmin;
+        top: 20vmin;
+        bottom: auto;
         left: -25vmin;
       }
 
       .long-g--1 {
-        bottom: 0vmin;
+        top: 35vmin;
+        bottom: auto;
         transform: scale(0.5) rotate(-5deg);
       }
 
       .long-g--2,
       .long-g--3 {
-        bottom: -2vmin;
+        top: 32vmin;
+        bottom: auto;
         left: -20vmin;
         transform: scale(0.35) rotateX(60deg);
       }
 
       .long-g--3 {
         left: -10vmin;
-        bottom: 0vmin;
+        top: 35vmin;
       }
 
       .long-g--4 {
         left: 15vmin;
-        bottom: -2vmin;
+        top: 32vmin;
+        bottom: auto;
         transform: scale(0.35) rotateX(60deg);
       }
 
       .long-g--5 {
         left: 25vmin;
-        bottom: 0vmin;
+        top: 35vmin;
+        bottom: auto;
         transform: scale(0.5) rotate(2deg);
       }
 
       .long-g--6 {
         left: 0vmin;
-        bottom: -15vmin;
+        top: 5vmin;
+        bottom: auto;
         z-index: 100;
         filter: blur(0.2vmin);
         transform: scale(0.5) rotate(2deg);
@@ -1218,7 +1233,8 @@
 
       .long-g--7 {
         left: 20vmin;
-        bottom: 12vmin;
+        top: 45vmin;
+        bottom: auto;
         z-index: -1;
         filter: blur(0.2vmin);
         transform: scale(0.35) rotate(2deg);
@@ -1234,8 +1250,21 @@
 
     /* Extra small phones (under 480px) */
     @media (max-width: 480px) {
+      body {
+        align-items: flex-start;
+        padding-top: 1.5vmin;
+      }
+
+      .flowers {
+        position: relative;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+      }
+
       .flower {
-        bottom: 3vmin;
+        top: 3vmin;
+        transform-origin: top center;
       }
 
       .flower--1 .flower__line {
@@ -1279,27 +1308,59 @@
         filter: blur(0.1vmin);
       }
 
+      .flower__grass {
+        top: 30vmin;
+        bottom: auto;
+      }
+
+      .flower__g-long {
+        top: 26vmin;
+        bottom: auto;
+      }
+
+      .flower__g-right {
+        top: 24vmin;
+        bottom: auto;
+      }
+
+      .flower__g-front {
+        top: 24vmin;
+        bottom: auto;
+      }
+
+      .flower__g-fr {
+        top: 28vmin;
+        bottom: auto;
+      }
+
       .long-g {
-        bottom: 10vmin;
+        top: 15vmin;
+        bottom: auto;
         left: -20vmin;
       }
 
       .long-g--2,
       .long-g--3 {
         left: -16vmin;
+        top: 24vmin;
+        bottom: auto;
       }
 
       .long-g--3 {
         left: -8vmin;
+        top: 27vmin;
       }
 
       .long-g--5 {
         left: 20vmin;
+        top: 27vmin;
+        bottom: auto;
       }
 
       .long-g--7 {
         left: 16vmin;
-        bottom: 10vmin;
+        top: 35vmin;
+        bottom: auto;
       }
 
       .long-g .leaf {
