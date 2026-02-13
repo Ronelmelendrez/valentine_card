@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>💕 Will You Be My Valentine?</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+
+  <style>
+    /* =========================================================
+       GLOBAL RESET & BASE STYLES
+    ========================================================= */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Playfair Display', serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* =========================================================
+       PAGE 1 – VALENTINE CARD
+    ========================================================= */
+    main {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg,
+        #ffe4f0 0%,
+        #ffc8dd 20%,
+        #ffb3c6 40%,
+        #fff0f3 60%,
+        #ffd6e0 80%,
+        #ffccd5 100%);
+      background-size: 400% 400%;
+      animation: gradientShift 8s ease infinite;
+      position: relative;
+      padding: 2rem;
+    }
+
+    /* Animated gradient background */
+    @keyframes gradientShift {
+      0%   { background-position: 0% 50%; }
+      50%  { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Floating hearts background decoration */
+    main::before {
+      content: '💕 🌹 💖 🌸 💗 🌺 💓 🌷 💝 🌹 💕 🌸';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      font-size: 1.5rem;
+      word-spacing: 3rem;
+      line-height: 4rem;
+      opacity: 0.12;
+      pointer-events: none;
+      overflow: hidden;
+      animation: floatBg 20s linear infinite;
+      white-space: nowrap;
+      letter-spacing: 2rem;
+    }
+
+    @keyframes floatBg {
+      0%   { transform: translateY(0); }
+      100% { transform: translateY(-50%); }
+    }
+
+    /* ---- The Valentine Card ---- */
+    .card {
+      background: linear-gradient(160deg,
+        rgba(255,255,255,0.95) 0%,
+        rgba(255,240,245,0.9) 50%,
+        rgba(255,220,232,0.85) 100%);
+      border-radius: 24px;
+      box-shadow:
+        0 20px 60px rgba(220, 60, 100, 0.2),
+        0 8px 25px rgba(220, 60, 100, 0.15),
+        inset 0 1px 0 rgba(255,255,255,0.8);
+      padding: 4.5rem 5rem;
+      text-align: center;
+      max-width: 650px;
+      width: 100%;
+      border: 1px solid rgba(255, 140, 170, 0.3);
+      position: relative;
+      animation: cardEntrance 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+      overflow: hidden;
+    }
+
+    @keyframes cardEntrance {
+      0%   { opacity: 0; transform: scale(0.7) translateY(40px); }
+      100% { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    /* Decorative ribbon top */
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, #ff6b8a, #ff4d6d, #ff6b8a);
+      border-radius: 0 0 8px 8px;
+    }
+
+    /* Decorative corner hearts */
+    .card::after {
+      content: '💖';
+      position: absolute;
+      top: 18px;
+      right: 20px;
+      font-size: 1.4rem;
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50%       { transform: scale(1.25); }
+    }
+
+    .card-icon {
+      font-size: 4.5rem;
+      display: block;
+      margin-bottom: 1.3rem;
+      animation: heartBeat 1.2s ease-in-out infinite;
+    }
+
+    @keyframes heartBeat {
+      0%, 100% { transform: scale(1); }
+      14%       { transform: scale(1.3); }
+      28%       { transform: scale(1); }
+      42%       { transform: scale(1.2); }
+      70%       { transform: scale(1); }
+    }
+
+    .card-tagline {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.2rem;
+      color: #e05577;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.9rem;
+      opacity: 0.85;
+    }
+
+    .card-title {
+      font-family: 'Dancing Script', cursive;
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: #c41a3f;
+      line-height: 1.25;
+      margin-bottom: 0.7rem;
+      text-shadow: 0 2px 8px rgba(196, 26, 63, 0.2);
+    }
+
+    .card-divider {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin: 1.25rem auto;
+      max-width: 260px;
+    }
+
+    .card-divider span {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #ffb3c6, transparent);
+    }
+
+    .card-rose {
+      font-size: 1.1rem;
+    }
+
+    .card-poem {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.15rem;
+      color: #8a3a50;
+      line-height: 1.9;
+      opacity: 0.9;
+    }
+
+    /* ---- Buttons Section ---- */
+    .buttons-wrapper {
+      margin-top: 3rem;
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      justify-content: center;
+      animation: fadeUp 1s 0.5s both;
+    }
+
+    @keyframes fadeUp {
+      0%   { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    /* YES button */
+    .btn-yes {
+      display: inline-block;
+      text-decoration: none;
+      background: linear-gradient(135deg, #ff4d6d 0%, #c41a3f 60%, #ff4d6d 100%);
+      background-size: 200% auto;
+      color: white;
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.6rem;
+      font-weight: 700;
+      padding: 1rem 3rem;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      box-shadow:
+        0 6px 20px rgba(196, 26, 63, 0.4),
+        0 2px 6px rgba(196, 26, 63, 0.3);
+      transition:
+        transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+        box-shadow 0.2s ease,
+        background-position 0.4s ease;
+      letter-spacing: 0.05em;
+    }
+
+    .btn-yes:hover {
+      transform: translateY(-3px) scale(1.06);
+      box-shadow:
+        0 12px 30px rgba(196, 26, 63, 0.5),
+        0 4px 10px rgba(196, 26, 63, 0.4);
+      background-position: right center;
+    }
+
+    .btn-yes:active {
+      transform: translateY(0) scale(0.98);
+    }
+
+    /* ---- Impossible NO Button ---- */
+    .btn-no-container {
+      position: relative;
+      width: 130px;
+      height: 55px;
+    }
+
+    .btn-no {
+      display: inline-block;
+      background: linear-gradient(135deg, #b0bec5, #90a4ae);
+      color: #fff;
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.6rem;
+      font-weight: 600;
+      padding: 1rem 2.3rem;
+      border-radius: 50px;
+      border: none;
+      cursor: not-allowed;
+      pointer-events: none;
+      box-shadow: 0 4px 14px rgba(100, 100, 120, 0.3);
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+      position: absolute;
+      top: 0; left: 0;
+      transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      user-select: none;
+    }
+
+    .btn-no-container::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .btn-no-container {
+      padding: 30px;
+      width: 190px;
+      height: 115px;
+      overflow: visible;
+    }
+
+    .btn-no-container:hover .btn-no {
+      transform: translate(260px, -180px) rotate(-15deg) scale(0.85);
+      opacity: 0.7;
+    }
+
+    .no-decoy {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: all;
+      z-index: 10;
+      cursor: not-allowed;
+    }
+
+    .no-decoy:hover ~ .btn-no {
+      transform: translate(-280px, 140px) rotate(20deg) scale(0.8);
+      opacity: 0.6;
+      transition: transform 0.2s ease;
+    }
+
+    .no-tease {
+      position: absolute;
+      bottom: -28px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Dancing Script', cursive;
+      font-size: 0.85rem;
+      color: #c87a8a;
+      white-space: nowrap;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+
+    .btn-no-container:hover .no-tease {
+      opacity: 1;
+    }
+
+    /* =========================================================
+       RESPONSIVE
+    ========================================================= */
+    /* Tablets (768px and above) */
+    @media (min-width: 768px) {
+      .card {
+        max-width: 700px;
+        padding: 5rem 5.5rem;
+      }
+
+      .card-title {
+        font-size: 3.8rem;
+      }
+
+      .card-icon {
+        font-size: 4.8rem;
+      }
+
+      .btn-yes {
+        font-size: 1.8rem;
+        padding: 1.1rem 3.5rem;
+      }
+
+      .btn-no {
+        font-size: 1.8rem;
+        padding: 1.1rem 2.5rem;
+      }
+    }
+
+    /* Small tablets/landscape phones (600px - 767px) */
+    @media (min-width: 600px) and (max-width: 767px) {
+      main {
+        padding: 1.5rem;
+      }
+
+      .card {
+        max-width: 95%;
+        padding: 3.5rem 3.5rem;
+      }
+
+      .card-title {
+        font-size: 2.8rem;
+      }
+
+      .card-icon {
+        font-size: 3.5rem;
+      }
+
+      .card-tagline {
+        font-size: 1rem;
+      }
+
+      .btn-yes {
+        font-size: 1.5rem;
+        padding: 0.9rem 2.5rem;
+      }
+
+      .btn-no {
+        font-size: 1.5rem;
+        padding: 0.9rem 2rem;
+      }
+    }
+
+    /* Mobile devices (480px - 599px) */
+    @media (max-width: 599px) {
+      main {
+        padding: 1rem;
+        min-height: auto;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+      }
+
+      .card {
+        max-width: 95%;
+        padding: 3rem 2rem;
+        border-radius: 16px;
+        box-shadow:
+          0 15px 40px rgba(220, 60, 100, 0.2),
+          0 6px 15px rgba(220, 60, 100, 0.15),
+          inset 0 1px 0 rgba(255,255,255,0.8);
+      }
+
+      .card::before {
+        width: 50px;
+        height: 3px;
+      }
+
+      .card::after {
+        font-size: 1.2rem;
+        top: 14px;
+        right: 16px;
+      }
+
+      .card-icon {
+        font-size: 3.2rem;
+        margin-bottom: 0.9rem;
+      }
+
+      .card-tagline {
+        font-size: 0.95rem;
+        margin-bottom: 0.7rem;
+      }
+
+      .card-title {
+        font-size: 2.3rem;
+        line-height: 1.3;
+        margin-bottom: 0.5rem;
+      }
+
+      .card-divider {
+        margin: 1.1rem auto;
+      }
+
+      .card-poem {
+        font-size: 1.02rem;
+        line-height: 1.7;
+      }
+
+      .buttons-wrapper {
+        margin-top: 2rem;
+        gap: 1.2rem;
+        flex-wrap: wrap;
+      }
+
+      .btn-yes {
+        font-size: 1.3rem;
+        padding: 0.8rem 2rem;
+      }
+
+      .btn-no {
+        font-size: 1.3rem;
+        padding: 0.8rem 1.7rem;
+      }
+
+      .btn-no-container {
+        padding: 20px;
+        width: 160px;
+        height: 90px;
+      }
+
+      .btn-no-container:hover .btn-no {
+        transform: translate(200px, -140px) rotate(-15deg) scale(0.8);
+      }
+
+      .no-decoy:hover ~ .btn-no {
+        transform: translate(-220px, 100px) rotate(20deg) scale(0.75);
+      }
+
+      .no-tease {
+        bottom: -24px;
+        font-size: 0.75rem;
+      }
+    }
+
+    /* Extra small phones (under 480px) */
+    @media (max-width: 479px) {
+      main {
+        padding: 0.8rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+      }
+
+      .card {
+        max-width: 100%;
+        padding: 2.3rem 1.4rem;
+        border-radius: 14px;
+      }
+
+      .card::before {
+        width: 40px;
+        height: 3px;
+      }
+
+      .card::after {
+        font-size: 1rem;
+        top: 12px;
+        right: 14px;
+      }
+
+      .card-icon {
+        font-size: 2.7rem;
+        margin-bottom: 0.7rem;
+      }
+
+      .card-tagline {
+        font-size: 0.9rem;
+        margin-bottom: 0.55rem;
+      }
+
+      .card-title {
+        font-size: 2rem;
+        line-height: 1.25;
+        margin-bottom: 0.4rem;
+      }
+
+      .card-divider {
+        margin: 1rem auto;
+        gap: 0.6rem;
+      }
+
+      .card-rose {
+        font-size: 1rem;
+      }
+
+      .card-poem {
+        font-size: 0.98rem;
+        line-height: 1.6;
+      }
+
+      .buttons-wrapper {
+        margin-top: 1.6rem;
+        gap: 0.9rem;
+        flex-wrap: wrap;
+      }
+
+      .btn-yes {
+        font-size: 1.15rem;
+        padding: 0.75rem 1.6rem;
+      }
+
+      .btn-no {
+        font-size: 1.15rem;
+        padding: 0.75rem 1.4rem;
+      }
+
+      .btn-no-container {
+        padding: 15px;
+        width: 140px;
+        height: 80px;
+      }
+
+      .btn-no-container:hover .btn-no {
+        transform: translate(170px, -120px) rotate(-15deg) scale(0.75);
+      }
+
+      .no-decoy:hover ~ .btn-no {
+        transform: translate(-180px, 85px) rotate(20deg) scale(0.7);
+      }
+
+      .no-tease {
+        bottom: -20px;
+        font-size: 0.7rem;
+      }
+    }
+
+    /* Very small phones - landscape orientation */
+    @media (max-height: 600px) and (orientation: landscape) {
+      main {
+        min-height: auto;
+        padding: 0.5rem;
+      }
+
+      .card {
+        padding: 1.5rem 1rem;
+        margin: 0;
+      }
+
+      .card-icon {
+        font-size: 2rem;
+        margin-bottom: 0.4rem;
+      }
+
+      .card-title {
+        font-size: 1.6rem;
+        margin-bottom: 0.2rem;
+      }
+
+      .card-poem {
+        font-size: 0.85rem;
+        line-height: 1.4;
+      }
+
+      .buttons-wrapper {
+        margin-top: 1rem;
+        gap: 0.6rem;
+      }
+
+      .btn-yes {
+        font-size: 1rem;
+        padding: 0.6rem 1.4rem;
+      }
+
+      .btn-no {
+        font-size: 1rem;
+        padding: 0.6rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <main>
+    <!-- The Card -->
+    <div class="card">
+      <span class="card-icon">💝</span>
+      <p class="card-tagline">A little note for you</p>
+      <h1 class="card-title">Will you be<br>my Valentine?</h1>
+      <div class="card-divider">
+        <span></span>
+        <span class="card-rose">🌹</span>
+        <span></span>
+      </div>
+      <p class="card-poem">
+        Every moment with you<br>
+        feels like a dream come true.<br>
+        Say yes, and I'll love you<br>
+        all my whole life through.
+      </p>
+    </div>
+
+    <!-- Buttons OUTSIDE the card -->
+    <div class="buttons-wrapper">
+
+      <!-- YES – navigates to flowers page -->
+      <a class="btn-yes" href="flowers.html">Yes! 💕</a>
+
+      <!-- NO – impossible to click; flees on hover via CSS -->
+      <div class="btn-no-container">
+        <div class="no-decoy"></div>
+        <button class="btn-no" tabindex="-1" aria-hidden="true">No 😬</button>
+        <span class="no-tease">Nice try! 😜</span>
+      </div>
+
+    </div>
+  </main>
+
+</body>
+</html>
