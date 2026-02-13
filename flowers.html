@@ -1073,300 +1073,259 @@
       body {
         min-height: 100vh;
         padding: 0;
-        align-items: flex-start;
-        justify-content: flex-start;
-        padding-top: 2vmin;
+        align-items: center;
+        justify-content: center;
       }
 
       .flowers {
         position: relative;
-        left: 50%;
-        top: 0;
-        transform: translateX(-50%);
+        left: auto;
+        bottom: auto;
+        transform: none;
         width: 100%;
         max-width: 100%;
         height: auto;
-        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
 
       .flower {
         position: absolute;
-        top: 5vmin;
-        transform-origin: top center;
+        bottom: 3vmin;
+        transform-origin: bottom center;
         z-index: 10;
         --fl-speed: 0.8s;
       }
 
       .flower--1 .flower__line {
-        height: 40vmin;
+        height: 38vmin;
         animation-delay: 0.3s;
       }
 
       .flower--2 .flower__line {
-        height: 35vmin;
+        height: 33vmin;
         animation-delay: 0.6s;
       }
 
       .flower--3 .flower__line {
-        height: 32vmin;
+        height: 30vmin;
         animation-delay: 0.9s;
       }
 
       .flower__line__leaf {
-        --w: 4vmin;
+        --w: 3.5vmin;
         --h: calc(var(--w) + 1vmin);
       }
 
       .flower__leaf {
-        width: 5vmin;
-        height: 7vmin;
+        width: 4.5vmin;
+        height: 6.5vmin;
       }
 
       .flower__leaf--4 {
-        width: 5vmin;
-        height: 5vmin;
+        width: 4.5vmin;
+        height: 4.5vmin;
       }
 
       .flower__leafs::after {
-        width: 5vmin;
-        height: 5vmin;
-        filter: blur(8vmin);
+        width: 4.5vmin;
+        height: 4.5vmin;
+        filter: blur(7vmin);
       }
 
       .flower__white-circle {
-        left: -2vmin;
-        top: -2vmin;
-        width: 6vmin;
-        height: 3vmin;
+        left: -1.8vmin;
+        top: -1.8vmin;
+        width: 5.5vmin;
+        height: 2.8vmin;
       }
 
       .flower__light {
-        width: 0.8vmin;
-        height: 0.8vmin;
-        filter: blur(0.15vmin);
+        width: 0.7vmin;
+        height: 0.7vmin;
+        filter: blur(0.13vmin);
       }
 
       .flower__line {
-        width: 1vmin;
+        width: 0.9vmin;
       }
 
       /* Adjust grass elements for mobile */
       .flower__grass {
-        top: 40vmin;
-        bottom: auto;
-        left: -5vmin;
+        bottom: 6vmin;
+        left: -4.5vmin;
       }
 
       .flower__g-long {
-        top: 35vmin;
-        bottom: auto;
-        left: -2vmin;
-        --w: 1.5vmin;
-        --h: 4vmin;
+        bottom: 3vmin;
+        left: -1.8vmin;
+        --w: 1.3vmin;
+        --h: 3.5vmin;
       }
 
       .flower__g-right {
-        top: 32vmin;
-        bottom: auto;
-        left: -1.5vmin;
+        bottom: 2vmin;
+        left: -1.2vmin;
       }
 
       .flower__g-front {
-        top: 32vmin;
-        bottom: auto;
-        left: 1.5vmin;
+        bottom: 2vmin;
+        left: 1.2vmin;
       }
 
       .flower__g-fr {
-        top: 38vmin;
-        bottom: auto;
-        left: 0.5vmin;
+        bottom: -2vmin;
+        left: 0.4vmin;
       }
 
       .long-g {
-        top: 20vmin;
-        bottom: auto;
-        left: -25vmin;
+        bottom: 12vmin;
+        left: -20vmin;
       }
 
       .long-g--1 {
-        top: 35vmin;
-        bottom: auto;
-        transform: scale(0.5) rotate(-5deg);
+        bottom: 0vmin;
+        transform: scale(0.45) rotate(-5deg);
       }
 
       .long-g--2,
       .long-g--3 {
-        top: 32vmin;
-        bottom: auto;
-        left: -20vmin;
-        transform: scale(0.35) rotateX(60deg);
+        bottom: -1.5vmin;
+        left: -16vmin;
+        transform: scale(0.3) rotateX(60deg);
       }
 
       .long-g--3 {
-        left: -10vmin;
-        top: 35vmin;
+        left: -8vmin;
+        bottom: 0vmin;
       }
 
       .long-g--4 {
-        left: 15vmin;
-        top: 32vmin;
-        bottom: auto;
-        transform: scale(0.35) rotateX(60deg);
+        left: 12vmin;
+        bottom: -1.5vmin;
+        transform: scale(0.3) rotateX(60deg);
       }
 
       .long-g--5 {
-        left: 25vmin;
-        top: 35vmin;
-        bottom: auto;
-        transform: scale(0.5) rotate(2deg);
+        left: 20vmin;
+        bottom: 0vmin;
+        transform: scale(0.45) rotate(2deg);
       }
 
       .long-g--6 {
         left: 0vmin;
-        top: 5vmin;
-        bottom: auto;
+        bottom: -12vmin;
         z-index: 100;
-        filter: blur(0.2vmin);
-        transform: scale(0.5) rotate(2deg);
+        filter: blur(0.18vmin);
+        transform: scale(0.45) rotate(2deg);
       }
 
       .long-g--7 {
-        left: 20vmin;
-        top: 45vmin;
-        bottom: auto;
+        left: 16vmin;
+        bottom: 10vmin;
         z-index: -1;
-        filter: blur(0.2vmin);
-        transform: scale(0.35) rotate(2deg);
+        filter: blur(0.18vmin);
+        transform: scale(0.3) rotate(2deg);
         opacity: 0.7;
       }
 
       .long-g .leaf {
-        --w: 10vmin;
-        --h: 25vmin;
-        border-left: 1.5vmin solid var(--c);
+        --w: 9vmin;
+        --h: 22vmin;
+        border-left: 1.3vmin solid var(--c);
       }
     }
 
     /* Extra small phones (under 480px) */
     @media (max-width: 480px) {
       body {
-        align-items: flex-start;
-        padding-top: 1.5vmin;
+        align-items: center;
+        justify-content: center;
       }
 
       .flowers {
         position: relative;
-        left: 50%;
-        top: 0;
-        transform: translateX(-50%);
+        left: auto;
+        bottom: auto;
+        transform: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
 
       .flower {
-        top: 3vmin;
-        transform-origin: top center;
+        bottom: 2vmin;
       }
 
       .flower--1 .flower__line {
-        height: 30vmin;
+        height: 28vmin;
       }
 
       .flower--2 .flower__line {
-        height: 26vmin;
-      }
-
-      .flower--3 .flower__line {
         height: 24vmin;
       }
 
+      .flower--3 .flower__line {
+        height: 22vmin;
+      }
+
       .flower__line__leaf {
-        --w: 3vmin;
-        --h: calc(var(--w) + 0.8vmin);
+        --w: 2.8vmin;
+        --h: calc(var(--w) + 0.7vmin);
       }
 
       .flower__leaf {
-        width: 3.5vmin;
-        height: 5vmin;
+        width: 3.2vmin;
+        height: 4.8vmin;
       }
 
       .flower__leafs::after {
-        width: 3.5vmin;
-        height: 3.5vmin;
-        filter: blur(6vmin);
+        width: 3.2vmin;
+        height: 3.2vmin;
+        filter: blur(5vmin);
       }
 
       .flower__white-circle {
-        width: 4vmin;
+        width: 3.8vmin;
         height: 2vmin;
-        left: -1.5vmin;
-        top: -1.5vmin;
+        left: -1.3vmin;
+        top: -1.3vmin;
       }
 
       .flower__light {
-        width: 0.6vmin;
-        height: 0.6vmin;
-        filter: blur(0.1vmin);
-      }
-
-      .flower__grass {
-        top: 30vmin;
-        bottom: auto;
-      }
-
-      .flower__g-long {
-        top: 26vmin;
-        bottom: auto;
-      }
-
-      .flower__g-right {
-        top: 24vmin;
-        bottom: auto;
-      }
-
-      .flower__g-front {
-        top: 24vmin;
-        bottom: auto;
-      }
-
-      .flower__g-fr {
-        top: 28vmin;
-        bottom: auto;
+        width: 0.5vmin;
+        height: 0.5vmin;
+        filter: blur(0.08vmin);
       }
 
       .long-g {
-        top: 15vmin;
-        bottom: auto;
-        left: -20vmin;
+        bottom: 8vmin;
+        left: -16vmin;
       }
 
       .long-g--2,
       .long-g--3 {
-        left: -16vmin;
-        top: 24vmin;
-        bottom: auto;
+        left: -12vmin;
       }
 
       .long-g--3 {
-        left: -8vmin;
-        top: 27vmin;
+        left: -6vmin;
       }
 
       .long-g--5 {
-        left: 20vmin;
-        top: 27vmin;
-        bottom: auto;
+        left: 16vmin;
       }
 
       .long-g--7 {
-        left: 16vmin;
-        top: 35vmin;
-        bottom: auto;
+        left: 12vmin;
+        bottom: 8vmin;
       }
 
       .long-g .leaf {
-        --w: 8vmin;
-        --h: 20vmin;
-        border-left: 1vmin solid var(--c);
+        --w: 7vmin;
+        --h: 18vmin;
+        border-left: 0.8vmin solid var(--c);
       }
     }
   </style>
